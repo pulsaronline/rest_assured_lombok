@@ -1,5 +1,6 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.util.List;
@@ -9,10 +10,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonPropertyOrder({
         "books"
 })
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Books {
 
     @JsonProperty("books")
-    private List<Book> books = null;
+    private List<Book> books;
 
     @JsonProperty("books")
     public List<Book> getBooks() {
