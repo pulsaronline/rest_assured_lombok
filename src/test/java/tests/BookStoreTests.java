@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class BookStoreTests {
 
     @Test
-    void withGroovyTest() {
+    void groovyEmailTest() {
                 Specs.request
                 .get("/users?page=2")
                 .then()
