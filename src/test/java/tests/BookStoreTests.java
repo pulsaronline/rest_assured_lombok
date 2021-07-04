@@ -15,7 +15,6 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -147,7 +146,7 @@ public class BookStoreTests {
     }
 
     @Test
-    void booksModelTest() {
+    void booksModelLombokTest() {
         Books books = Specs.request
                         .log().uri()
                         .log().body()
@@ -171,7 +170,9 @@ public class BookStoreTests {
         bookFields.add("2020-06-04T08:48:39.000Z");
         bookFields.add("O'Reilly Media");
         bookFields.add("234");
-        bookFields.add("This pocket guide is the perfect on-the-job companion to Git, the distributed version control system. It provides a compact, readable introduction to Git for new users, as well as a reference to common commands and procedures for those of you with Git exp");
+        bookFields.add("This pocket guide is the perfect on-the-job companion to Git, the distributed version control system. " +
+                "It provides a compact, readable introduction to Git for new users, as well as a reference to common commands and " +
+                "procedures for those of you with Git exp");
         bookFields.add("http://chimera.labs.oreilly.com/books/1230000000561/index.html");
 
         Book book = Specs.request

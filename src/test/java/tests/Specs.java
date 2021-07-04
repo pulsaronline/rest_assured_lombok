@@ -17,6 +17,5 @@ public class Specs {
 
     public static ResponseSpecification responseSpec = new ResponseSpecBuilder()
             .expectStatusCode(200)
-            //.expectBody(containsString("Success"))
             .build();
 }
